@@ -75,5 +75,18 @@ namespace BakeryWholesale.Tests
     List<Order> result = newVendor.Orders;
     CollectionAssert.AreEqual(newList, result);
     }
+    [TestMethod]
+    public void Find_ReturnsCorrectVendor_Vendor()
+    {
+      string vendor1 = "Test Vendor";
+      string vendor2 = "Test Vendor Also";
+      string vendorDescription1 = "Test Example";
+      string vendorDescription2 = "Test Example also";
+      Vendor newVendor1 = new Vendor(vendor1, vendorDescription1);
+      Vendor newVendor2 = new Vendor(vendor2, vendorDescription2);
+
+      Vendor result = Vendor.Find(2);
+      Assert.AreEqual(newVendor2, result);
+    }
   }
 }
