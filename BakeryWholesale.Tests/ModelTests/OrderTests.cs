@@ -28,10 +28,9 @@ namespace BakeryWholesale.Tests
     {
       string orderName = "TestOrder";
       string orderDescription = "testExample";
-      string failOrderDescription = "This is an example to compare to the string orderDescription for a failed test";
       Order newOrder = new Order(orderName, orderDescription);
       string result = newOrder.OrderDescription;
-      Assert.AreEqual(failOrderDescription, result);
+      Assert.AreEqual(orderDescription, result);
     }
   }
 }
