@@ -66,7 +66,9 @@ namespace BakeryWholesale.Tests
       string orderDate2 = "12/18/1992";
       Order newOrder1 = new Order(orderName1, orderDescription1, orderPrice1, orderDate1);
       Order newOrder2 = new Order(orderName2, orderDescription2, orderPrice2, orderDate2);
-      List<Order> = newOrderList = new List<Order> { newOrder1, newOrder2 };
+      List<Order> newOrderList = new List<Order> { newOrder1, newOrder2 };
+      List<Order> result = Order.GetOrders();
+      CollectionAssert.AreEqual(newOrderList, result);
     }
   }
 }
