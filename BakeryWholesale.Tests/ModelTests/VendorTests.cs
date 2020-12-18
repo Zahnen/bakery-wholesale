@@ -46,10 +46,9 @@ namespace BakeryWholesale.Tests
       string vendorDescription2 = "testExample2";
       Vendor newVendor1 = new Vendor(vendorName1, vendorDescription1);
       Vendor newVendor2 = new Vendor(vendorName2, vendorDescription2);
-      List<Vendor> failVendorList = new List<Vendor> { newVendor1 };
       List<Vendor> newVendorList = new List<Vendor> { newVendor1, newVendor2 };
       List<Vendor> result = Vendor.GetVendors();
-      CollectionAssert.AreEqual(failVendorList, result);
+      CollectionAssert.AreEqual(newVendorList, result);
     }
   }
 }
