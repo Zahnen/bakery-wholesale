@@ -6,10 +6,12 @@ namespace BakeryWholesale.Models
   public class Order
   {
     public string OrderName { get; set; }
+    public string OrderDescription { get; set; }
 
-    public Order(string orderName)
+    public Order(string orderName, string orderDescription)
     {
       OrderName = orderName;
+      OrderDescription = orderDescription;
     }
   }
 }

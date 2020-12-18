@@ -12,14 +12,14 @@ namespace BakeryWholesale.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-    Order newOrder = new Order("test");
+    Order newOrder = new Order("testName", "testDescription");
     Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
     [TestMethod]
     public void OrderConstructor_ReturnsOrderTitle_String()
     {
       string orderName = "TestOrder";
-      Order newOrder = new Order(orderName);
+      Order newOrder = new Order(orderName, "testDescription");
       string result = newOrder.OrderName;
       Assert.AreEqual(orderName, result);
     }
@@ -28,9 +28,10 @@ namespace BakeryWholesale.Tests
     {
       string orderName = "TestOrder";
       string orderDescription = "testExample";
+      string failOrderDescription = "This is an example to compare to the string orderDescription for a failed test";
       Order newOrder = new Order(orderName, orderDescription);
       string result = newOrder.OrderDescription;
-      Assert.AreEqual(orderDescription, result);
+      Assert.AreEqual(failOrderDescription, result);
     }
   }
 }
