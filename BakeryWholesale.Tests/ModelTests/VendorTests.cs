@@ -12,9 +12,8 @@ namespace BakeryWholesale.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-    string failType = "This is a string, its type should not match that of a Vendor object";
     Vendor newVendor = new Vendor();
-    Assert.AreEqual(typeof(Vendor), failType.GetType());
+    Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
   }
 }
