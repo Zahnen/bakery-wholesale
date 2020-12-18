@@ -73,8 +73,7 @@ namespace BakeryWholesale.Tests
     List<Order> newList = new List<Order> { newOrder };
     newVendor.AddOrder(newOrder);
     List<Order> result = newVendor.Orders;
-    List<Order> failList = new List<Order> {};
-    CollectionAssert.AreEqual(failList, result);
+    CollectionAssert.AreEqual(newList, result);
     }
   }
 }
