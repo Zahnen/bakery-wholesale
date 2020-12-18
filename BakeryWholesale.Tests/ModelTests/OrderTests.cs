@@ -77,9 +77,8 @@ namespace BakeryWholesale.Tests
       Order newOrder1 = new Order(orderName1, orderDescription1, orderPrice1, orderDate1);
       Order newOrder2 = new Order(orderName2, orderDescription2, orderPrice2, orderDate2);
       List<Order> newOrderList = new List<Order> { newOrder1, newOrder2 };
-      List<Order> failOrderList = new List<Order> { newOrder1 };
       List<Order> result = Order.GetOrders();
-      CollectionAssert.AreEqual(failOrderList, result);
+      CollectionAssert.AreEqual(newOrderList, result);
     }
   }
 }
