@@ -19,10 +19,9 @@ namespace BakeryWholesale.Tests
     public void VendorConstructor_ReturnsVendorName()
     {
       string vendorName = "TestVendor";
-      string failName = "This is an example to compare to the string vendorName for a failed test";
       Vendor newVendor = new Vendor(vendorName);
       string result = newVendor.VendorName;
-      Assert.AreEqual(failName, result);
+      Assert.AreEqual(vendorName, result);
     }
   }
 }
