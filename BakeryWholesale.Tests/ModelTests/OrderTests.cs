@@ -19,10 +19,9 @@ namespace BakeryWholesale.Tests
     public void OrderConstructor_ReturnsOrderTitle_String()
     {
       string orderName = "TestOrder";
-      string failName = "This is an example to compare to the string orderName for a failed test";
       Order newOrder = new Order(orderName);
       string result = newOrder.OrderName;
-      Assert.AreEqual(failName, result);
+      Assert.AreEqual(orderName, result);
     }
   }
 }
