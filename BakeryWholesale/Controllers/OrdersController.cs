@@ -10,5 +10,12 @@ namespace BakeryWholesale.Controllers
     {
       return View();
     }
+
+    [HttpGet("/orders/{orderId}/orders/new")]
+    public ActionResult New(int orderId)
+    {
+      Order order = Order.Find(orderId);
+      return View(order);
+    }
   }
 }
