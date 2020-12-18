@@ -31,5 +31,10 @@ namespace BakeryWholesale.Models
     {
       _orderList.Clear();
     }
+
+    public static Order Find(int Id)
+    {
+      return _orderList[Id-1];
+    }
   }
 }
