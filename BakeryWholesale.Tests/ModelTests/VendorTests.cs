@@ -16,12 +16,21 @@ namespace BakeryWholesale.Tests
     Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
     [TestMethod]
-    public void VendorConstructor_ReturnsVendorName()
+    public void VendorConstructor_ReturnsVendorName_String()
     {
       string vendorName = "TestVendor";
       Vendor newVendor = new Vendor(vendorName);
       string result = newVendor.VendorName;
       Assert.AreEqual(vendorName, result);
+    }
+    [TestMethod]
+    public void VendorConstructor_ReturnsVendorDescription_String()
+    {
+      string vendorName = "TestVendor";
+      string vendorDescription = "testExampleDescription";
+      Vendor newVendor = new Vendor(vendorName, vendorDescription);
+      string result = newVendor.VendorDescription;
+      Assert.AreEqual(vendorDescription, result);
     }
   }
 }
