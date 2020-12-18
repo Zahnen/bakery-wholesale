@@ -84,10 +84,9 @@ namespace BakeryWholesale.Tests
       string vendorDescription2 = "Test Example also";
       Vendor newVendor1 = new Vendor(vendor1, vendorDescription1);
       Vendor newVendor2 = new Vendor(vendor2, vendorDescription2);
-      Vendor failVendor = new Vendor("This should", "fail because it a different Vendor object than the one with an ID of 2");
 
       Vendor result = Vendor.Find(2);
-      Assert.AreEqual(failVendor, result);
+      Assert.AreEqual(newVendor2, result);
     }
   }
 }
