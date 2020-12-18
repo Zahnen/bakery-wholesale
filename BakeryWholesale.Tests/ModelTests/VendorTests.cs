@@ -7,8 +7,13 @@ using System.Collections.Generic;
 namespace BakeryWholesale.Tests
 {
   [TestClass]
-  public class VendorTests
+  public class VendorTests : IDisposable
   {
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
+
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
@@ -41,10 +46,14 @@ namespace BakeryWholesale.Tests
       string vendorDescription2 = "testExample2";
       Vendor newVendor1 = new Vendor(vendorName1, vendorDescription1);
       Vendor newVendor2 = new Vendor(vendorName2, vendorDescription2);
+      List<Vendor> failVendorList = new List<Vendor> { newVendor1 };
       List<Vendor> newVendorList = new List<Vendor> { newVendor1, newVendor2 };
       List<Vendor> result = Vendor.GetVendors();
-      CollectionAssert.AreEqual(newVendorList, result);
+      CollectionAssert.AreEqual(failVendorList, result);
     }
+  }
+}
+
     // [TestMethod]
     // public void GetId_ReturnsVendorId_Int()
     // {
@@ -53,6 +62,3 @@ namespace BakeryWholesale.Tests
     //   Vendor newVendor = new Vendor(vendorName, vendorDescription);
     //   int result = newVendor.Id;
     //   Assert.AreEqual(1, result);
-    }
-  }
-}
