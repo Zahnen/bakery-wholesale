@@ -49,10 +49,9 @@ namespace BakeryWholesale.Tests
       string orderDescription = "testExample";
       int orderPrice = 8;
       string orderDate = "12/18/2020";
-      string failDate = "12/18/1992";
       Order newOrder = new Order(orderName, orderDescription, orderPrice, orderDate);
       string result = newOrder.OrderDate;
-      Assert.AreEqual (failDate, result);
+      Assert.AreEqual (orderDate, result);
     }
   }
 }
