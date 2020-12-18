@@ -71,10 +71,10 @@ namespace BakeryWholesale.Tests
     Vendor newVendor = new Vendor(vendorName, vendorDescription);
     Order newOrder = new Order(orderName, orderDescription, orderPrice, orderDate);
     List<Order> newList = new List<Order> { newOrder };
-    newList.AddOrder(newOrder);
-
-    List<Order> result = newOrder.Orders;
-    CollectionAssert.AreEqual(newList, result);
+    newVendor.AddOrder(newOrder);
+    List<Order> result = newVendor.Orders;
+    List<Order> failList = new List<Order> {};
+    CollectionAssert.AreEqual(failList, result);
     }
   }
 }

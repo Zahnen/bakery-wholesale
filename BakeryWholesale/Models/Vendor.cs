@@ -9,6 +9,8 @@ namespace BakeryWholesale.Models
     public string VendorDescription { get; set; }
     public int Id { get; } 
     private static List<Vendor> _vendorList = new List<Vendor> {};
+    public List<Order> Orders { get; set; }
+
 
     public Vendor(string vendorName, string vendorDescription)
     {
@@ -16,6 +18,8 @@ namespace BakeryWholesale.Models
       VendorDescription = vendorDescription;
       _vendorList.Add(this);
       Id = _vendorList.Count;
+      Orders = new List<Order>{};
+
 
     }
     public static List<Vendor> GetVendors()
@@ -26,6 +30,9 @@ namespace BakeryWholesale.Models
     {
       _vendorList.Clear();
     }
-
+    public void AddOrder(Order order)
+    {
+      Orders.Add(order);
+    }
   }
 }
