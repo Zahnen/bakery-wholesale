@@ -12,9 +12,8 @@ namespace BakeryWholesale.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-    string failType = "This is a string, its type should not match that of an Order object";
     Order newOrder = new Order();
-    Assert.AreEqual(typeof(Order), failType.GetType());
+    Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
   }
 }
