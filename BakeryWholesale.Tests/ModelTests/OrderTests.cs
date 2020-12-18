@@ -90,7 +90,7 @@ namespace BakeryWholesale.Tests
       string orderDate = "12/18/2020";
       Order newOrder = new Order(orderName, orderDescription, orderPrice, orderDate);
       int result = newOrder.Id;
-      Assert.AreEqual(2, result);
+      Assert.AreEqual(1, result);
     }
   }
 }
