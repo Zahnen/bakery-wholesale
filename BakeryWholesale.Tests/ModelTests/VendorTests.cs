@@ -12,16 +12,17 @@ namespace BakeryWholesale.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-    Vendor newVendor = new Vendor();
+    Vendor newVendor = new Vendor("test");
     Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
     [TestMethod]
     public void VendorConstructor_ReturnsVendorName()
     {
       string vendorName = "TestVendor";
+      string failName = "This is an example to compare to the string vendorName for a failed test";
       Vendor newVendor = new Vendor(vendorName);
       string result = newVendor.VendorName;
-      Assert.AreEqual(vendorName, result);
+      Assert.AreEqual(failName, result);
     }
   }
 }
