@@ -7,11 +7,13 @@ namespace BakeryWholesale.Models
   {
     public string OrderName { get; set; }
     public string OrderDescription { get; set; }
+    public int OrderPrice { get; set; }
 
-    public Order(string orderName, string orderDescription)
+    public Order(string orderName, string orderDescription, int orderPrice)
     {
       OrderName = orderName;
       OrderDescription = orderDescription;
+      OrderPrice = orderPrice;
     }
   }
 }

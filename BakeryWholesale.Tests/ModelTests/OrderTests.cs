@@ -38,9 +38,10 @@ namespace BakeryWholesale.Tests
       string orderName = "TestOrder";
       string orderDescription = "testExample";
       int orderPrice = 8;
+      int failPrice = 10;
       Order newOrder = new Order(orderName, orderDescription, orderPrice);
-      string result = newOrder.OrderPrice;
-      Assert.AreEqual(orderPrice, result);
+      int result = newOrder.OrderPrice;
+      Assert.AreEqual(failPrice, result);
     }
   }
 }
