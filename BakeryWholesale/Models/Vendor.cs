@@ -34,5 +34,9 @@ namespace BakeryWholesale.Models
     {
       Orders.Add(order);
     }
+    public static Vendor Find(int Id)
+    {
+      return _vendorList[Id-1];
+    }
   }
 }
