@@ -28,10 +28,9 @@ namespace BakeryWholesale.Tests
     {
       string vendorName = "TestVendor";
       string vendorDescription = "testExampleDescription";
-      string failVendorDescription = "This is an example to compare to the string vendorDescription for a failed test";
       Vendor newVendor = new Vendor(vendorName, vendorDescription);
       string result = newVendor.VendorDescription;
-      Assert.AreEqual(failVendorDescription, result);
+      Assert.AreEqual(vendorDescription, result);
     }
   }
 }
