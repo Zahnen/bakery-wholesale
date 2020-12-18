@@ -105,10 +105,8 @@ namespace BakeryWholesale.Tests
       string orderDate2 = "12/18/1992";
       Order newOrder1 = new Order(orderName1, orderDescription1, orderPrice1, orderDate1);
       Order newOrder2 = new Order(orderName2, orderDescription2, orderPrice2, orderDate2);
-      Order failOrder = new Order("This will fail", "because it doesn't match the order at index position 2",8,"it is at index position 3");
-
       Order result = Order.Find(2);
-      Assert.AreEqual(failOrder, result);
+      Assert.AreEqual(newOrder2, result);
     }
   }
 }
