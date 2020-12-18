@@ -80,5 +80,17 @@ namespace BakeryWholesale.Tests
       List<Order> result = Order.GetOrders();
       CollectionAssert.AreEqual(newOrderList, result);
     }
+
+    [TestMethod]
+    public void GetId_ReturnsOrderId_Int()
+    {
+      string orderName = "TestOrder";
+      string orderDescription = "testExample";
+      int orderPrice = 8;
+      string orderDate = "12/18/2020";
+      Order newOrder = new Order(orderName, orderDescription, orderPrice, orderDate);
+      int result = newOrder.Id;
+      Assert.AreEqual(1, result);
+    }
   }
 }
