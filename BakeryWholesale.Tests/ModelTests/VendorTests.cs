@@ -59,5 +59,22 @@ namespace BakeryWholesale.Tests
       int result = newVendor.Id;
       Assert.AreEqual(1, result);
     }
+    [TestMethod]
+    public void AddOrder_AssociatesOrderObjectInListWithinVendorObject_OrderList()
+    {
+    string vendorName = "TestVendor";
+    string vendorDescription = "testExample";
+    string orderName = "TestOrder1";
+    string orderDescription = "testExample1";
+    int orderPrice = 8;
+    string orderDate = "12/18/2020";
+    Vendor newVendor = new Vendor(vendorName, vendorDescription);
+    Order newOrder = new Order(orderName, orderDescription, orderPrice, orderDate);
+    List<Order> newList = new List<Order> { newOrder };
+    newList.AddOrder(newOrder);
+
+    List<Order> result = newOrder.Orders;
+    CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
