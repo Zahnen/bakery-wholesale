@@ -9,6 +9,7 @@ namespace BakeryWholesale.Models
     public string OrderDescription { get; set; }
     public string OrderDate { get; set; }
     public int OrderPrice { get; set; }
+    public int Id { get; } 
     private static List<Order> _orderList = new List<Order> {};
 
     public Order(string orderName, string orderDescription, int orderPrice, string orderDate)
@@ -18,6 +19,7 @@ namespace BakeryWholesale.Models
       OrderPrice = orderPrice;
       OrderDate = orderDate;
       _orderList.Add(this);
+      Id = _orderList.Count;
     }
 
     public static List<Order> GetOrders()
