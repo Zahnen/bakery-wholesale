@@ -9,6 +9,7 @@ namespace BakeryWholesale.Models
     public string OrderDescription { get; set; }
     public string OrderDate { get; set; }
     public int OrderPrice { get; set; }
+    private static List<Order> _orderList = new List<Order> {};
 
     public Order(string orderName, string orderDescription, int orderPrice, string orderDate)
     {
@@ -16,6 +17,17 @@ namespace BakeryWholesale.Models
       OrderDescription = orderDescription;
       OrderPrice = orderPrice;
       OrderDate = orderDate;
+      _orderList.Add(this);
+    }
+
+    public static List<Order> GetOrders()
+    {
+      return _orderList;
+    }
+
+    public static void ClearAll()
+    {
+      _orderList.Clear();
     }
   }
 }

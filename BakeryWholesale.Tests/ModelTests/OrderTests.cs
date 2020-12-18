@@ -7,14 +7,20 @@ using System.Collections.Generic;
 namespace BakeryWholesale.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
+
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
     Order newOrder = new Order("testName", "testDescription", 8, "12/18/2020");
     Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
+
     [TestMethod]
     public void OrderConstructor_ReturnsOrderTitle_String()
     {
@@ -23,6 +29,7 @@ namespace BakeryWholesale.Tests
       string result = newOrder.OrderName;
       Assert.AreEqual(orderName, result);
     }
+
     [TestMethod]
     public void OrderConstructor_ReturnsOrderDescription_String()
     {
@@ -32,6 +39,7 @@ namespace BakeryWholesale.Tests
       string result = newOrder.OrderDescription;
       Assert.AreEqual(orderDescription, result);
     }
+
     [TestMethod]
     public void OrderConstructor_ReturnsOrderPrice_Int()
     {
@@ -42,6 +50,7 @@ namespace BakeryWholesale.Tests
       int result = newOrder.OrderPrice;
       Assert.AreEqual(orderPrice, result);
     }
+
     [TestMethod]
     public void OrderConstructor_ReturnsOrderDate_String()
     {
@@ -53,6 +62,7 @@ namespace BakeryWholesale.Tests
       string result = newOrder.OrderDate;
       Assert.AreEqual (orderDate, result);
     }
+
     [TestMethod]
     public void GetOrders_ReturnsListofOrderObjects_OrderList()
     {
@@ -67,8 +77,9 @@ namespace BakeryWholesale.Tests
       Order newOrder1 = new Order(orderName1, orderDescription1, orderPrice1, orderDate1);
       Order newOrder2 = new Order(orderName2, orderDescription2, orderPrice2, orderDate2);
       List<Order> newOrderList = new List<Order> { newOrder1, newOrder2 };
+      List<Order> failOrderList = new List<Order> { newOrder1 };
       List<Order> result = Order.GetOrders();
-      CollectionAssert.AreEqual(newOrderList, result);
+      CollectionAssert.AreEqual(failOrderList, result);
     }
   }
 }
