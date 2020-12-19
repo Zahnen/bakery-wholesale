@@ -1,21 +1,29 @@
 using Microsoft.AspNetCore.Mvc;
 using BakeryWholesale.Models;
+using System.Collections.Generic;
+
 
 namespace BakeryWholesale.Controllers
 {
   public class OrdersController : Controller
   {
-    [HttpGet("/orders/new")]
-    public ActionResult New()
+
+    [HttpGet("/vendors/{vendorId}/orders/new")]
+    public ActionResult New(int vendorId)
     {
-      return View();
+      Vendor currentVenfor = Vendor.Find(vendorId);
+      return View(currentVenfor);
     }
 
-    [HttpGet("/orders/{orderId}/orders/new")]
-    public ActionResult New(int orderId)
+    [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
+    public ActionResult Show(int vendorId, int orderId)
     {
-      Order order = Order.Find(orderId);
-      return View(order);
+    Order order = Order.Find(orderId);
+    Vendor vendor = Vendor.Find(vendorId);
+    Dictionary<string, object> model = new Dictionary<string, object>();
+    model.Add("order", order);
+    model.Add("vendor", vendor);
+    return View(model);
     }
   }
 }
