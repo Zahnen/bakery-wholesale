@@ -1,11 +1,11 @@
-# **Wholesale Order Management Application**
+# **Rise Order Management System**
 ### A web application using C#, December 18, 2020
 
 #### By Zahnen Garner
 
 ---  
 
-_This web application was created as my independent project for my ninth week at Epicodus. The application allows users to manage wholesale vendor accounts and orders within that vendor profile. The application was created to apply concepts I learned this week which include the basics of writing web applications in C#, creating custom classes and methods in C#, testing C# apps in MSTest, using ASP.NET Core, and using MVC routing following RESTful conventions ._  
+_Rise OMS is an order management system (OMS) developed for a fictional bakery as my independent project for my ninth week at Epicodus. The application allows users to manage wholesale vendor accounts and orders within that vendor profile. The application was created to apply concepts I learned this week which include the basics of writing web applications in C#, creating custom classes and methods in C#, testing C# apps in MSTest, using ASP.NET Core, and using MVC routing following RESTful conventions ._  
 
 ---  
 
@@ -28,7 +28,6 @@ _This web application was created as my independent project for my ninth week at
 ## Known Bugs/Issues
 
 There are no known bugs or issues at this time. If you come across any, please let me know by emailing me!
-
 
 
 ---  
