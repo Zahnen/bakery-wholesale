@@ -11,8 +11,8 @@ namespace BakeryWholesale.Controllers
     [HttpGet("/vendors/{vendorId}/orders/new")]
     public ActionResult New(int vendorId)
     {
-      Vendor currentVenfor = Vendor.Find(vendorId);
-      return View(currentVenfor);
+      Vendor currentVendor = Vendor.Find(vendorId);
+      return View(currentVendor);
     }
 
     [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
