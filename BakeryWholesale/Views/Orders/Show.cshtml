@@ -1,12 +1,11 @@
 @{
   Layout = "_Layout";
 }
-<div class="container">
-  <h1>This is your order SHOW view</h1>
-  <h1>Order Details: </h1>
 
-  <h2>@Model["order"].OrderName</h2>
-  <h2>@Model["order"].OrderDescription</h2>
-  <h2>@Model["order"].OrderPrice</h2>
-  <h3>Category: @Model["vendor"].VendorName</h3>
+<h1>Order Summary: </h1>
+<div class="vendorHub">
+<h3>Name: @Model["order"].OrderName</h2>
+<h3>Description: @Model["order"].OrderDescription</h2>
+<h3>Price: $@Model["order"].OrderPrice.00</h2>
+<h3>Vendor: @Model["vendor"].VendorName</h2>
 </div>
